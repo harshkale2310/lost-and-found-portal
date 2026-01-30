@@ -1,0 +1,269 @@
+/* ===================================================== 
+   ABOUT PAGE – NETFLIX DARK THEME
+===================================================== */
+
+.about-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 70px);
+  padding: 80px 20px 80px;
+  background: linear-gradient(180deg, #020617 0%, #0a0f20 100%);
+}
+
+/* =====================================================
+   TOP SECTION (BACKGROUND IMAGE + OVERLAY)
+===================================================== */
+
+.about-top {
+  padding: 60px 20px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/college.jpg") center/cover no-repeat;
+  filter: brightness(0.55);
+  z-index: 0;
+}
+
+.about-top::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55));
+  z-index: 1;
+}
+
+.about-top .container {
+  position: relative;
+  z-index: 2;
+}
+
+.about-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #38bdf8;
+  margin-bottom: 24px;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cbd5e1;
+  max-width: 720px;
+  margin: 12px auto;
+}
+
+/* =====================================================
+   VISION SECTION
+===================================================== */
+
+.about-vision {
+  padding: 80px 20px;
+}
+
+.vision-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.vision-content {
+  flex: 1;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.vision-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-subtitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.vision-image {
+  flex: 0.9;
+  max-width: 520px;
+  opacity: 0;
+  transform: translateX(140px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  transition: opacity 1.1s ease, transform 1.1s ease;
+}
+
+.image-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.vision-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+/* =====================================================
+   MISSION SECTION
+===================================================== */
+
+.about-mission {
+  padding: 80px 20px;
+  background-color: #0a0f20;
+}
+
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.mission-card {
+  background: linear-gradient(145deg, #0b0f1f, #020617);
+  border-radius: 16px;
+  padding: 28px 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 24px 60px rgba(56, 189, 248, 0.6);
+}
+
+.mission-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.mission-card p {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   LOST ITEMS SLIDER (SMOOTH CONTINUOUS)
+===================================================== */
+
+.lost-slider-section {
+  padding: 80px 20px;
+}
+
+.lost-slider {
+  overflow: hidden;
+  position: relative;
+  padding: 30px 0;
+}
+
+.lost-slider-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: slide 22s linear infinite;
+}
+
+.lost-card {
+  width: 320px;
+  min-width: 320px;
+  border-radius: 16px;
+  background: #111827;
+  padding: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.lost-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.lost-card h4 {
+  font-size: 18px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.lost-badge,
+.found-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.lost-badge {
+  background: #ef4444;
+}
+
+.found-badge {
+  background: #22c55e;
+}
+
+/* Smooth continuous animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+==================================================== */
+
+@media (max-width: 1024px) {
+  .vision-layout {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+  .vision-image img {
+    height: 280px;
+  }
+  .mission-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-title {
+    font-size: 28px;
+  }
+  .vision-image img {
+    height: 200px;
+  }
+  .mission-cards {
+    grid-template-columns: 1fr;
+  }
+  .mission-card {
+    padding: 20px 16px;
+  }
+
+  .lost-card {
+    width: 280px;
+    min-width: 280px;
+  }
+}

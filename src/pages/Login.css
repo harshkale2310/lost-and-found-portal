@@ -1,0 +1,226 @@
+/* =========================================================
+   AUTH LOGIN / SIGNUP PAGE – DARK NETFLIX-LIKE THEME
+===================================================== */
+
+/* =========================
+   AUTH PAGE WRAPPER (LAYOUT)
+========================= */
+.auth-page {
+  padding-top: 70px; /* navbar height for desktop */
+}
+
+/* Mobile & tablet centering */
+@media (max-width: 768px) {
+  .auth-page {
+    min-height: calc(100svh - 70px); /* safe viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+}
+
+/* =========================
+   AUTH CONTAINER (CARD)
+========================= */
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 60px auto; /* desktop spacing only */
+  padding: 36px 32px;
+  background: #11131a;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+  color: #e5e7eb;
+  font-family: "Inter", sans-serif;
+  animation: fadeIn 0.4s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* =========================
+   TITLES
+========================= */
+.auth-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #22d3ee;
+}
+
+/* =========================
+   FORM
+========================= */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #2c2f3a;
+  background-color: #1a1c2b;
+  color: #e5e7eb;
+  outline: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.auth-form input:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+  background-color: #1f2232;
+}
+
+/* =========================
+   PASSWORD FIELD WRAPPER
+========================= */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 60px; /* space for button */
+}
+
+.show-hide-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: #11131a;
+  color: #22d3ee;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.show-hide-btn:hover {
+  background: #0b0d13;
+  color: #06b6d4;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #22d3ee, #06b6d4);
+  color: #0f1115;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background: linear-gradient(135deg, #06b6d4, #22d3ee);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(34, 211, 238, 0.4);
+}
+
+.auth-btn:disabled {
+  background: #2c2f3a;
+  color: #777;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================
+   MESSAGES
+========================= */
+.auth-msg.success {
+  background-color: #0f2f0f;
+  color: #22c55e;
+  border: 1px solid #22c55e;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.auth-msg.error {
+  background-color: #2b0000;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* =========================
+   TOGGLE TEXT
+========================= */
+.toggle-auth {
+  text-align: center;
+  margin-top: 16px;
+  color: #22d3ee;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.toggle-auth:hover {
+  color: #06b6d4;
+  text-decoration: underline;
+}
+
+/* =========================
+   MOBILE RESPONSIVE (PHONES)
+========================= */
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 0; /* 🔥 important: flex centering */
+    padding: 28px 20px;
+    max-width: 100%;
+  }
+
+  .auth-title {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .auth-form input {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .auth-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .toggle-auth {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

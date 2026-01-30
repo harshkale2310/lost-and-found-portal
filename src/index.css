@@ -1,0 +1,108 @@
+/* =========================================================
+   🌑 THEME VARIABLES
+========================================================= */
+:root {
+  --bg-main: #0b0b0b;
+  --bg-secondary: #141414;
+  --bg-card: #1f1f1f;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+
+  --accent-red: #e50914;
+
+  --border-color: #2a2a2a;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+  --transition-fast: 0.25s ease;
+  --transition-slow: 0.4s ease;
+}
+
+/* =========================================================
+   🔒 HARD RESET (IMPORTANT)
+========================================================= */
+html {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-main);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+
+  overflow-x: hidden;
+  overscroll-behavior: none;
+
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   🧱 LAYOUT (PREVENTS FOOTER + SCROLL GAPS)
+========================================================= */
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main);
+}
+
+.page-content {
+  flex: 1;
+  background-color: var(--bg-main);
+}
+
+/* =========================================================
+   🧭 NAVBAR (STICKY – NO BLACK FLASH)
+========================================================= */
+.dyptc-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  height: 70px;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+
+  /* CRITICAL FIX */
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* =========================================================
+   🦶 FOOTER BASE (BACKGROUND ALWAYS FILLS)
+========================================================= */
+.dyptc-footer {
+  width: 100%;
+  background-color: #0f111a;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   🧯 EMERGENCY FALLBACK (DO NOT REMOVE)
+========================================================= */
+html,
+body,
+.layout-wrapper,
+.page-content {
+  background-color: var(--bg-main);
+}

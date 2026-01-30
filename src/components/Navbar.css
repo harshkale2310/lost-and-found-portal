@@ -1,0 +1,502 @@
+
+
+/* =========================================================
+   🏷 LOGO (ENHANCED)
+========================================================= */
+.navbar-logo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+/* Subtle underline accent */
+.navbar-logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-red), #ff6b6b);
+  transition: width 0.35s ease;
+}
+
+/* Hover effect */
+.navbar-logo:hover {
+  color: var(--accent-red);
+  transform: translateY(-1px);
+  text-shadow: 0 0 12px rgba(229, 9, 20, 0.45);
+}
+
+.navbar-logo:hover::after {
+  width: 100%;
+}
+
+/* Click feedback */
+.navbar-logo:active {
+  transform: scale(0.96);
+}
+
+/* =========================================================
+   📚 NAV LINKS LIST
+========================================================= */
+.navbar-list {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* =========================================================
+   🔗 NAV LINKS
+========================================================= */
+.navbar-link {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  transition: color var(--transition-fast);
+}
+
+.navbar-link:hover {
+  color: var(--text-primary);
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent-red);
+  transition: width var(--transition-fast);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   🚨 REPORT BUTTON (Highlighted)
+========================================================= */
+.navbar-report-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.navbar-report-btn:hover {
+  background-color: rgba(229, 9, 20, 0.15);
+  color: var(--accent-red);
+}
+
+/* =========================================================
+   ⚙️ RIGHT SIDE ACTIONS
+========================================================= */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================================================
+   🔘 AUTH BUTTONS
+========================================================= */
+.navbar-btn {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.navbar-btn.login {
+  background-color: var(--accent-red);
+  color: #fff;
+}
+
+.navbar-btn.login:hover {
+  background-color: #ff1a1a;
+  transform: translateY(-1px);
+}
+
+.navbar-btn.logout {
+  background-color: #2a2a2a;
+  color: var(--text-primary);
+}
+
+.navbar-btn.logout:hover {
+  background-color: #3a3a3a;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   📱 MOBILE RESPONSIVE
+========================================================= */
+@media (max-width: 768px) {
+  .dyptc-navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .navbar-list {
+    width: 100%;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .navbar-link {
+    font-size: 0.85rem;
+  }
+
+  .navbar-logo {
+    font-size: 1rem;
+  }
+
+  .nav-right {
+    gap: 8px;
+  }
+}
+
+/* =====================================================
+   NAVBAR – DARK NETFLIX STYLE (FINAL, MOBILE SAFE)
+===================================================== */
+
+/* ========================= NAVBAR BASE ========================= */
+.dyptc-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #1e1e1e;
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4000;
+
+  /* 🔧 Prevent mobile flicker */
+  will-change: transform;
+  transform: translateZ(0);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Push page content below navbar */
+.page-content {
+  padding-top: 70px;
+}
+
+/* ========================= LOGO ========================= */
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #22d3ee;
+  transition: transform 0.25s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+/* ========================= DESKTOP NAV ========================= */
+.navbar-list,
+.nav-right {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-list a,
+.navbar-list button,
+.nav-right a,
+.nav-right button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar-list a:hover,
+.navbar-list button:hover,
+.nav-right a:hover,
+.nav-right button:hover {
+  transform: translateY(-2px);
+  color: #ff4d4d;
+}
+
+.navbar-list a::after,
+.navbar-list button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ff4d4d;
+  transition: width 0.3s ease;
+}
+
+.navbar-list a:hover::after,
+.navbar-list button:hover::after {
+  width: 100%;
+}
+
+/* ========================= PRIMARY BUTTONS ========================= */
+.navbar-btn,
+.nav-right a,
+.nav-right button {
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  background: #e50914;
+  color: #ffffff;
+  font-weight: 500;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.navbar-btn:hover,
+.nav-right a:hover,
+.nav-right button:hover {
+  background: #ff1f1f;
+  transform: translateY(-1px);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.nav-right .logout {
+  background: #b20710;
+}
+
+.nav-right .logout:hover {
+  background: #e50914;
+}
+
+/* ========================= HAMBURGER ========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 4500;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ========================= MOBILE OVERLAY ========================= */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========================= MOBILE MENU ========================= */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+
+  /* 🔥 FULL HEIGHT FIX */
+  height: 100svh;
+
+  background: #0f111a;
+
+  /* Navbar height + notch safe */
+  padding-top: calc(70px + env(safe-area-inset-top));
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  transform: translate3d(100%, 0, 0);
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+
+  z-index: 3500;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.mobile-menu.show {
+  transform: translate3d(0, 0, 0);
+}
+
+/* ========================= MOBILE MENU LINKS ========================= */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-menu ul li a,
+.mobile-menu ul li button {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  font-size: 1.05rem;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+}
+
+.mobile-menu ul li a::after,
+.mobile-menu ul li button::after {
+  content: none !important;
+}
+
+.mobile-menu ul li a:hover,
+.mobile-menu ul li button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* ========================= MOBILE ACTION BUTTONS ========================= */
+.mobile-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-actions a,
+.mobile-actions button {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 6px;
+  background: #e50914;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-actions a:hover,
+.mobile-actions button:hover {
+  background: #ff1f1f;
+  transform: translateY(-2px);
+}
+
+.mobile-actions .logout {
+  background: #b20710;
+}
+
+.mobile-actions .logout:hover {
+  background: #e50914;
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    align-self: center;
+  }
+
+  .navbar-logo {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .dyptc-navbar {
+    align-items: center;
+  }
+
+  .mobile-menu a:active,
+  .mobile-menu button:active {
+    transform: scale(0.96);
+  }
+}

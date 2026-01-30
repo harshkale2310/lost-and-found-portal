@@ -1,0 +1,110 @@
+/* =========================================================
+   FOOTER – DARK NETFLIX STYLE
+========================================================= */
+.dyptc-footer {
+  width: 100%;
+  background: #0f111a;
+  color: #e5e7eb;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+  border-top: 1px solid #222;
+  flex-shrink: 0;
+}
+
+/* Footer main content layout */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   FOOTER SECTIONS
+========================================================= */
+.footer-section h3,
+.footer-section h4 {
+  color: #22d3ee;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.footer-section p,
+.footer-section li {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+}
+
+.footer-section a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: #22d3ee;
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   FOOTER BOTTOM BAR
+========================================================= */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #222;
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 0; /* IMPORTANT FIX */
+}
+
+.footer-bottom marquee {
+  display: block;
+  color: #22d3ee;
+  font-weight: 500;
+}
+
+/* =========================================================
+   FOOTER RESPONSIVE RULES
+========================================================= */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer-section.footer-links {
+    display: none;
+  }
+
+  .footer-section h3,
+  .footer-section h4 {
+    font-size: 18px;
+  }
+
+  .footer-section p,
+  .footer-section li {
+    font-size: 13px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}

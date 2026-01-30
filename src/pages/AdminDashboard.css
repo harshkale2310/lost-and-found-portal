@@ -1,0 +1,237 @@
+
+/* =====================================================
+   ADMIN DASHBOARD – DARK THEME
+===================================================== */
+
+.admin-dashboard {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #11131a;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+  color: #e5e7eb;
+  font-family: "Inter", sans-serif;
+}
+
+.admin-dashboard h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #22d3ee;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #1f2933;
+  background: #0d0f1a;
+}
+
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.admin-dashboard thead {
+  background-color: #161829;
+}
+
+.admin-dashboard th {
+  padding: 14px 16px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #1f2933;
+  text-align: left;
+}
+
+.admin-dashboard td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #1f2933;
+  vertical-align: middle;
+  color: #e5e7eb;
+}
+
+.admin-dashboard tbody tr:hover {
+  background-color: #1a1c2b;
+  transition: background 0.2s ease;
+}
+
+/* Status badges */
+.status-badge {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  text-transform: capitalize;
+  display: inline-block;
+  color: #111827;
+}
+.status-pending {
+  background-color: #facc15;
+  color: #1f1f1f;
+}
+.status-resolved {
+  background-color: #22c55e;
+  color: #0f1115;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-dashboard button {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #22d3ee;
+  background-color: #22d3ee;
+  color: #0f1115;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-dashboard button:hover {
+  background-color: #1aa5b3;
+  transform: translateY(-2px);
+}
+
+/* Delete button styling */
+.delete-btn {
+  background-color: #ef4444;
+  border-color: #dc2626;
+  color: #fff;
+}
+.delete-btn:hover {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Loading text */
+.admin-dashboard p {
+  text-align: center;
+  font-size: 16px;
+  color: #94a3b8;
+}
+
+/* =====================
+   RESPONSIVE DESIGN
+===================== */
+@media (max-width: 1024px) {
+  .admin-dashboard {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard table {
+    min-width: 100%;
+  }
+  .admin-dashboard th,
+  .admin-dashboard td {
+    font-size: 13px;
+    padding: 12px;
+  }
+}
+/* Card view for small mobile - improved readability */
+@media (max-width: 600px) {
+  .admin-dashboard table,
+  .admin-dashboard thead,
+  .admin-dashboard tbody,
+  .admin-dashboard th,
+  .admin-dashboard td,
+  .admin-dashboard tr {
+    display: block;
+  }
+
+  .admin-dashboard thead {
+    display: none;
+  }
+
+  .admin-dashboard tr {
+    background: #11131a;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    word-wrap: break-word; /* allow text wrap */
+  }
+
+  .admin-dashboard td {
+    display: flex;
+    flex-direction: column; /* stack label + value */
+    justify-content: flex-start;
+    border: none;
+    padding: 6px 0;
+  }
+
+  .admin-dashboard td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 4px; /* spacing between label & value */
+    font-size: 12px;
+  }
+
+  .admin-dashboard td > * {
+    overflow-wrap: anywhere; /* prevent overflow of long text */
+  }
+
+  .action-buttons {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 8px; /* add spacing above buttons */
+    flex-wrap: wrap;
+  }
+
+  .admin-dashboard button {
+    font-size: 12px;
+    padding: 6px 10px;
+    white-space: nowrap; /* keep buttons readable */
+  }
+}
+
+/* Action buttons wrapper */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .admin-dashboard td .action-buttons {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .admin-dashboard td .action-buttons button {
+    flex: 0 0 auto; /* prevent stretching */
+    width: auto; /* fit content */
+    white-space: nowrap; /* single line text */
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .admin-dashboard td .action-buttons span {
+    margin-top: 6px; /* spacing for resolved label */
+    display: inline-block;
+  }
+
+  .admin-dashboard td {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

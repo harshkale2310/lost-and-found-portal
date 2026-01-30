@@ -1,0 +1,655 @@
+
+/* =====================================================
+   HOME PAGE – NETFLIX DARK THEME (FOOTER SAFE)
+===================================================== */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: calc(100vh - 70px); /* navbar height safe */
+  padding: 80px 20px 140px; /* ⬅️ extra bottom space for footer */
+  text-align: center;
+  background: linear-gradient(180deg, #020617 0%, #020617 100%);
+  position: relative;
+}
+
+/* =====================================================
+   HOME TITLE
+===================================================== */
+.home-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #f9fafb;
+  letter-spacing: 0.5px;
+}
+
+.home-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #9ca3af;
+}
+
+/* =====================================================
+   STATS SECTION
+===================================================== */
+
+.stats-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0 10px; /* mobile breathing space */
+}
+
+/* =====================================================
+   STAT CARD
+===================================================== */
+
+.stat-card {
+  position: relative;
+  padding: 34px 20px;
+  background: linear-gradient(145deg, #0b1220, #020617);
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(56, 189, 248, 0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.stat-card h2 {
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-card p {
+  font-size: 16px;
+  color: #9ca3af;
+}
+
+/* Colors */
+.stat-card.lost h2 {
+  color: #ef4444;
+}
+.stat-card.found h2 {
+  color: #22c55e;
+}
+.stat-card.total h2 {
+  color: #38bdf8;
+}
+
+/* =====================================================
+   PULSE ANIMATION
+===================================================== */
+
+.stat-card.pulse {
+  animation: pulseGlow 0.6s ease;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(56, 189, 248, 0);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(56, 189, 248, 0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE FIXES
+===================================================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .stats-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .stats-box {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .stat-card {
+    padding: 28px 18px;
+  }
+
+  .stat-card h2 {
+    font-size: 42px;
+  }
+
+  .stat-card p {
+    font-size: 14px;
+  }
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+.home-hero {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  animation: fadeUp 0.8s ease;
+}
+
+/* =====================================================
+   CHART
+===================================================== */
+.home-chart {
+  max-width: 600px;
+  margin: 0 auto 100px;
+}
+
+.home-chart h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #f9fafb;
+  text-transform: uppercase;
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 220px;
+  gap: 20px;
+}
+
+.bar {
+  width: 80px;
+}
+
+.bar span {
+  display: block;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  transition: height 0.5s ease;
+}
+
+.lost-bar span {
+  background: linear-gradient(#ef4444, #7f1d1d);
+}
+
+.found-bar span {
+  background: linear-gradient(#22c55e, #14532d);
+}
+
+.bar label {
+  margin-top: 8px;
+  display: block;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+/* =====================================================
+   SEARCH
+===================================================== */
+.home-search {
+  display: flex;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.home-search input,
+.home-search select {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #f9fafb;
+}
+
+.home-search input:focus,
+.home-search select:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* =====================================================
+   LIVE REPORTS SECTION
+===================================================== */
+
+.home-activity {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 16px;
+}
+
+.home-activity h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #f9fafb;
+}
+
+/* =====================================================
+   LIST
+===================================================== */
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  background: linear-gradient(135deg, #0b1220, #020617);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.activity-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.75);
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.activity-image {
+  position: relative;
+  width: 150px;
+  height: 120px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #020617;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Image */
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+/* Soft overlay */
+.activity-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.45)
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+/* Hover animation */
+.activity-image:hover img {
+  transform: scale(1.12);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.activity-image:hover::after {
+  opacity: 1;
+}
+
+/* Placeholder */
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =====================================================
+   BADGE (ON IMAGE)
+===================================================== */
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+.badge.lost {
+  background: rgba(239, 68, 68, 0.4);
+  color: #fecaca;
+}
+
+.badge.found {
+  background: rgba(34, 197, 94, 0.4);
+  color: #bbf7d0;
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.activity-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.activity-content strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.activity-content p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.activity-content .time {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* =====================================================
+   SHARE BUTTON
+===================================================== */
+
+.share-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.share-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 640px) {
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .activity-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .activity-content {
+    width: 100%;
+  }
+
+  .share-btn {
+    align-self: flex-end;
+    margin-top: 8px;
+  }
+}
+
+/* =====================================================
+   REPORT BUTTON
+===================================================== */
+
+.btn-report {
+  display: block;
+  margin: 36px auto 0;
+  padding: 16px 52px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  border: none;
+  cursor: pointer;
+  color: #020617;
+  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.45);
+  transition: all 0.25s ease;
+}
+
+.btn-report:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 640px) {
+  .activity-item {
+    gap: 14px;
+  }
+
+  .activity-image {
+    width: 80px;
+    height: 60px;
+  }
+
+  .share-btn {
+    display: none;
+  }
+
+  .btn-report {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* ================= MODAL OVERLAY ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.25s ease;
+  z-index: 9999;
+} /* ================= MODAL CONTENT ================= */
+.modal-content {
+  width: min(92vw, 900px);
+  max-height: 92vh;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+  animation: scaleUp 0.25s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+} /* ================= IMAGE AREA ================= */
+.modal-img-wrap {
+  flex: 1; /* 🔥 takes available space */
+  min-height: 220px;
+  max-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background: #020617;
+  overflow: auto;
+}
+.modal-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+} /* ================= INFO SECTION ================= */
+.modal-info {
+  padding: 18px 20px;
+  border-top: 1px solid #1f2937;
+  background: #0b1220;
+}
+.modal-info h2 {
+  font-size: 20px;
+  color: #f9fafb;
+  margin-bottom: 6px;
+}
+.modal-info p {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.5;
+} /* ================= CLOSE BUTTON ================= */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f9fafb;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+.modal-close:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.14);
+} /* ================= CONTROL BAR ================= */
+.modal-controls {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 1px solid #1f2937;
+  background: rgba(255, 255, 255, 0.03);
+}
+.modal-controls button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid #1f2937;
+  color: #f9fafb;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.modal-controls button:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+} /* ================= SHARE BUTTON ================= */
+.share-btn {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid #1f2937;
+  color: #f9fafb;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.share-btn:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+} /* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+} /* ================= MOBILE FIX ================= */
+@media (max-width: 640px) {
+  .modal-content {
+    width: 94vw;
+    max-height: 94vh;
+  }
+  .modal-img-wrap {
+    max-height: 55vh;
+  }
+}
