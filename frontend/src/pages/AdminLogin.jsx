@@ -8,9 +8,9 @@ export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Hardcoded admin credentials
-  const ADMIN_EMAIL = "admin@dyptc.edu";
-  const ADMIN_PASSWORD = "dyptcadmin123";
+  // Admin credentials from .env (Vite)
+  const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL;
+  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
   const handleAdminLogin = (e) => {
     e.preventDefault();
@@ -18,14 +18,13 @@ export default function AdminLogin() {
     if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
       localStorage.setItem("admin", "true");
 
-      // Notify Navbar and other components
+      // Notify Navbar / other components
       window.dispatchEvent(new Event("storage"));
 
       navigate("/admin-dashboard");
-      return;
+    } else {
+      alert("Invalid admin credentials!");
     }
-
-    alert("Invalid admin credentials!");
   };
 
   return (
